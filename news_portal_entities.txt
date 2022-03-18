@@ -1,11 +1,9 @@
-CREATE TABLE ORDERS (
-    order_id INT AUTO_INCREMENT NOT NULL,
-    time_in DATETIME NOT NULL,
-    time_out DATETIME NOT NULL,
-    cost FLOAT NOT NULL,
-    pickup INT NOT NULL
+CREATE TABLE ARTICLES (
+    article_id INT AUTO_INCREMENT NOT NULL,
+    time_pub DATETIME NOT NULL,
+    author CHAR(50) NOT NULL,
 
-    PRIMARY KEY (order_id)
+    PRIMARY KEY (article_id)
     FOREIGN KEY (staff) REFERENCES STAFF (staff_id)
 );
 
