@@ -8,5 +8,5 @@ Product
 
 <!-- В контенте на странице мы выводим сам товар, идентификатор которого был передан в url -->
 {% block content %}
-<h1>{{ product }}</h1>
+<h1>{{ product }} Материалы: {% for mat in product.mats.all %} {{ mat|lower }} {% endfor %}</h1>
 {% endblock content %}
