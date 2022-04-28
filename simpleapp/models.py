@@ -3,6 +3,9 @@ from django.core.validators import MinValueValidator
 
 
 # Товар для нашей витрины
+from django.urls import reverse
+
+
 class Product(models.Model):
     name = models.CharField(
         max_length=50,
@@ -26,6 +29,9 @@ class Product(models.Model):
 
     def __str__(self):
         return f'{self.name}.'
+
+    def get_absolute_url(self):
+        return reverse('product_detail', args=[str(self.id)])
 
 
 class Material(models.Model):
